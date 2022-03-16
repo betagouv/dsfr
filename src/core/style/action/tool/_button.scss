@@ -4,11 +4,9 @@
 ////
 
 @mixin btn-reset {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  -webkit-appearance: button;
   background-color: transparent;
   font-family: inherit;
-  border: none;
+  border-radius: 0;
   margin: 0; // Address margins set differently in Firefox 4+, Safari, and Chrome.
 }

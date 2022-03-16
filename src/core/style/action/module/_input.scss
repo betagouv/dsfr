@@ -5,8 +5,11 @@
 
 input,
 select,
+optgroup,
 textarea {
-  @include font-family;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
   @include text-adjustments;
   border-radius: 0;
   background-color: transparent;
