@@ -52,7 +52,6 @@
   @include _pseudo($pseudo, $content) {
     $url: get-url-icon($icon, $important);
     -webkit-mask-image: $url;
-    mask-image: $url;
   }
 }
 
@@ -114,7 +113,9 @@
     $icons-settings: $icons-settings-remix;
   }
   @each $icon, $setting in $icons-settings {
-    #{ns(#{$base}-#{$icon})} {
+    $split-name: str-split($icon, '/');
+    $icon-name: nth($split-name, length($split-name));
+    #{ns(#{$base}-#{$icon-name})} {
       @include icon-content($icon, before, true);
     }
   }
@@ -126,7 +127,9 @@
     $icons-settings: $icons-settings-remix;
   }
   @each $icon, $setting in $icons-settings {
-    #{ns(#{$base}-#{$icon})} {
+    $split-name: str-split($icon, '/');
+    $icon-name: nth($split-name, length($split-name));
+    #{ns(#{$base}-#{$icon-name})} {
       @include icon-legacy($icon, null, before, false);
     }
   }

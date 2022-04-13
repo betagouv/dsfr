@@ -7,7 +7,7 @@
 
 %>
 <% eval(include('../../../index.ejs')); %>
-<% let icon = locals.icon || {} %>
+<% const icon = locals.icon || {} %>
 
 <span class="<%= prefix %>-icon-<%= icon.icon %> <% switch(icon.size) {
   case 'sm': %><%= prefix %>-icon--sm<% break;

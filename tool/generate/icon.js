@@ -3,14 +3,17 @@ const path = require('path');
 const root = require('../utilities/root');
 const { createFile } = require('../utilities/file');
 
-const getIconList = (dir, suff) => {
-  const icons = [];
-  const iconDir = root(`${dir}/${suff}`);
+const getIconList = (dir, subdir = '') => {
+  let icons = [];
+  const iconDir = root(dir);
   fs.readdirSync(iconDir).forEach((file) => {
-    const ls = fs.lstatSync(path.join(iconDir, file));
+    const pathfile = path.join(iconDir, file);
+    const ls = fs.lstatSync(pathfile);
     if (ls.isFile() && path.extname(file) === '.svg') {
       const name = file.substring(0, file.length - 4);
-      icons.push(name);
+      icons.push(subdir + name);
+    } else if (ls.isDirectory()) {
+      icons = icons.concat(getIconList(path.join(dir, file), file + '/'));
     }
   });
 
@@ -19,11 +22,11 @@ const getIconList = (dir, suff) => {
 
 const generateIcon = async (dir) => {
   let sass = '$icons-settings-remix: (';
-  for (const icon of getIconList(dir, 'remix')) sass += `${icon}, `;
+  for (const icon of getIconList(path.join(dir, 'remix'))) sass += `${icon}, `;
   sass += ');\n';
 
   sass += '$icons-settings-dsfr: (';
-  for (const icon of getIconList(dir, 'dsfr')) sass += `${icon}, `;
+  for (const icon of getIconList(path.join(dir, '/dsfr'))) sass += `${icon}, `;
   sass += ');\n';
 
   const iconPath = root('.config/icon.scss');
