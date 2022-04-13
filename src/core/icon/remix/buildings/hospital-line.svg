@@ -1,7 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Buildings/hospital-line</title>
-    <g id="Buildings/hospital-line" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path d="M20,2 C20.5522847,2 21,2.44771525 21,3 L21,20 L23,20 L23,22 L1,22 L1,20 L3,20 L3,3 C3,2.44771525 3.44771525,2 4,2 L20,2 Z M14,16 L10,16 L10,20 L14,20 L14,16 Z M19,4 L5,4 L5,20 L8,20 L8,14 L16,14 L16,20 L19,20 L19,4 Z M13,6 L13,8 L15,8 L15,10 L13,10 L13,12 L11,12 L11,10 L9,10 L9,8 L11,8 L11,6 L13,6 Z" id="Couleur-de-l'icône" fill="#161616"></path>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><pathd="M20 2a1 1 0 0 1 1 1v17h2v2H1v-2h2V3a1 1 0 0 1 1-1h16Zm-6 14h-4v4h4v-4Zm5-12H5v16h3v-6h8v6h3V4Zm-6 2v2h2v2h-2v2h-2v-2H9V8h2V6h2Z"/></svg>
