@@ -7,6 +7,7 @@ class Ratio extends Instance {
   }
 
   init () {
+    console.log('-----ratio-----', api.internals.support.supportAspectRatio());
     if (!api.internals.support.supportAspectRatio()) {
       this.ratio = 16 / 9;
       for (const className in this.classNames) {
@@ -18,6 +19,7 @@ class Ratio extends Instance {
           }
         }
       }
+      console.log(this.ratio);
       this.isRendering = true;
       this.update();
     }
